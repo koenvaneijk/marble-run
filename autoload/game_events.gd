@@ -1,0 +1,8 @@
+extends Node
+
+signal coin_collected
+signal run_started
+signal finish_reached
+
+signal ui_requested_load_track
+signal ui_requested_start_run
