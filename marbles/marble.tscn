@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://marbles/marble.gd" type="Script" id=1]
+[ext_resource path="res://marbles/swipe_detector.gd" type="Script" id=2]
+
+[sub_resource type="PhysicsMaterial" id=4]
+bounce = 0.2
+
+[sub_resource type="SphereMesh" id=1]
+
+[sub_resource type="OpenSimplexNoise" id=5]
+octaves = 6
+period = 62.3
+persistence = 0.26
+lacunarity = 4.0
+
+[sub_resource type="NoiseTexture" id=6]
+seamless = true
+as_normalmap = true
+bump_strength = 32.0
+noise = SubResource( 5 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.647059, 0.054902, 0.054902, 1 )
+albedo_texture = SubResource( 6 )
+
+[sub_resource type="SphereShape" id=2]
+
+[node name="Marble" type="RigidBody"]
+mass = 0.510204
+physics_material_override = SubResource( 4 )
+script = ExtResource( 1 )
+speed_multiplier = 2.0
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 2 )
+
+[node name="CameraRig" type="Position3D" parent="."]
+
+[node name="Camera" type="Camera" parent="CameraRig"]
+transform = Transform( 1, 0, 0, 0, 0.793034, 0.609177, 0, -0.609177, 0.793034, 0, 7.68017, 7.57188 )
+
+[node name="SwipeDetector" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[connection signal="swiped" from="SwipeDetector" to="." method="_on_SwipeDetector_swiped"]

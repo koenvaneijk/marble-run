@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/cheer.ogg-025aa0ab871af3a26908ab2edc4bee43.oggstr"
+
+[deps]
+
+source_file="res://sounds/cheer.ogg"
+dest_files=[ "res://.import/cheer.ogg-025aa0ab871af3a26908ab2edc4bee43.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

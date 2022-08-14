@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 1, 0.478431, 0.0431373, 1 )
+
+[sub_resource type="CubeMesh" id=1]
+material = SubResource( 2 )
+size = Vector3( 20, 1, 20 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.752941, 0.352941, 0, 1 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "UpAndDown"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Spatial:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 2.1, 2.6, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 10, 0 ), Vector3( 0, 10, 0 ), Vector3( 0, 0, 0 ) ]
+}
+
+[node name="TrackB" type="Spatial"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 8, 0 )
+
+[node name="Spatial" type="Spatial" parent="."]
+
+[node name="CSGMesh" type="CSGMesh" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+use_collision = true
+mesh = SubResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.49093e-09, 0.93123, 9.00414 )
+use_collision = true
+width = 20.0211
+material = SubResource( 3 )
+
+[node name="CSGBox2" type="CSGBox" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.78156e-07, 0.93123, -8.99224 )
+use_collision = true
+width = 20.0211
+material = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Spatial"]
+root_node = NodePath("../..")
+autoplay = "UpAndDown"
+anims/UpAndDown = SubResource( 4 )
