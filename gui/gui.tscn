@@ -1,19 +1,20 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://gui/gui.gd" type="Script" id=1]
 [ext_resource path="res://gui/track_select.tscn" type="PackedScene" id=2]
 [ext_resource path="res://theme.tres" type="Theme" id=3]
 [ext_resource path="res://gui/hud.tscn" type="PackedScene" id=4]
 [ext_resource path="res://gui/track_splash.tscn" type="PackedScene" id=5]
+[ext_resource path="res://gui/track_end_screen.tscn" type="PackedScene" id=6]
 
 [node name="GUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 3 )
-script = ExtResource( 1 )
 
-[node name="TrackSplash" parent="." instance=ExtResource( 5 )]
+[node name="TrackSelectScreen" parent="." instance=ExtResource( 2 )]
 
-[node name="TrackSelect" parent="." instance=ExtResource( 2 )]
+[node name="TrackStartScreen" parent="." instance=ExtResource( 5 )]
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
+
+[node name="TrackEndScreen" parent="." instance=ExtResource( 6 )]
