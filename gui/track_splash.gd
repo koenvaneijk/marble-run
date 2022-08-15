@@ -11,3 +11,11 @@ func _on_load_track(_index):
 func _on_StartRunButton_button_up():
 	GameEvents.emit_signal("ui_requested_start_run")
 	hide()
+
+
+func _on_PreviousMarbleButton_button_up():
+	GameEvents.emit_signal("ui_requested_previous_marble")
+
+
+func _on_NextMarbleButton_button_up():
+	GameEvents.emit_signal("ui_requested_next_marble")

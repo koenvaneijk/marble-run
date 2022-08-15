@@ -2,11 +2,10 @@
 
 [ext_resource path="res://marbles/marble.gd" type="Script" id=1]
 [ext_resource path="res://marbles/swipe_detector.gd" type="Script" id=2]
+[ext_resource path="res://marbles/blue_with_fresnel.tres" type="SphereMesh" id=3]
 
 [sub_resource type="PhysicsMaterial" id=4]
 bounce = 0.2
-
-[sub_resource type="SphereMesh" id=1]
 
 [sub_resource type="OpenSimplexNoise" id=5]
 octaves = 6
@@ -78,7 +77,7 @@ shader = SubResource( 9 )
 
 [sub_resource type="SpatialMaterial" id=3]
 next_pass = SubResource( 10 )
-albedo_color = Color( 0.647059, 0.054902, 0.054902, 1 )
+albedo_color = Color( 0.137255, 0.054902, 0.647059, 1 )
 albedo_texture = SubResource( 6 )
 
 [sub_resource type="SphereShape" id=2]
@@ -90,7 +89,7 @@ script = ExtResource( 1 )
 speed_multiplier = 2.0
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-mesh = SubResource( 1 )
+mesh = ExtResource( 3 )
 material/0 = SubResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]

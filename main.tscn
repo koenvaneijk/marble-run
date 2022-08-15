@@ -1,12 +1,20 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://marbles/marble.tscn" type="PackedScene" id=1]
+[ext_resource path="res://environments/gray_sky.tres" type="Environment" id=2]
 [ext_resource path="res://main.gd" type="Script" id=3]
+[ext_resource path="res://environments/yellow.tres" type="Environment" id=4]
+[ext_resource path="res://marbles/blue_with_fresnel.tres" type="SphereMesh" id=5]
 [ext_resource path="res://gui/gui.tscn" type="PackedScene" id=6]
+[ext_resource path="res://marbles/red_with_fresnel.tres" type="SphereMesh" id=7]
+
+[sub_resource type="Environment" id=1]
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 3 )
 player_scene = ExtResource( 1 )
+environments = [ ExtResource( 2 ), ExtResource( 4 ) ]
+marbles = [ ExtResource( 5 ), ExtResource( 7 ) ]
 
 [node name="GUI" parent="." instance=ExtResource( 6 )]
 
@@ -17,3 +25,11 @@ transform = Transform( 1, 0, 0, 0, 0.793034, 0.609177, 0, -0.609177, 0.793034, 0
 
 [node name="TrackTimer" type="Timer" parent="."]
 wait_time = 10000.0
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.513098, 0.644539, -0.566833, -0.276614, 0.500988, 0.820058, 0.812536, 0.577564, -0.0787674, -94.4395, 7.15604, -173.779 )
+shadow_enabled = true
+shadow_bias = 1.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )

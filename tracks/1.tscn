@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://tracks/parts/c.tscn" type="PackedScene" id=1]
 [ext_resource path="res://tracks/parts/finish.tscn" type="PackedScene" id=2]
@@ -7,22 +7,6 @@
 [ext_resource path="res://tracks/parts/a.tscn" type="PackedScene" id=5]
 [ext_resource path="res://tracks/parts/b.tscn" type="PackedScene" id=6]
 [ext_resource path="res://sounds/theme.ogg" type="AudioStream" id=7]
-
-[sub_resource type="OpenSimplexNoise" id=1]
-
-[sub_resource type="NoiseTexture" id=2]
-seamless = true
-noise = SubResource( 1 )
-
-[sub_resource type="PanoramaSky" id=3]
-panorama = SubResource( 2 )
-
-[sub_resource type="Environment" id=4]
-background_mode = 2
-background_sky = SubResource( 3 )
-ambient_light_color = Color( 0, 0.660156, 1, 1 )
-ambient_light_energy = 0.29
-ambient_light_sky_contribution = 0.0
 
 [node name="Track1" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.6769, 0 )
@@ -83,14 +67,6 @@ transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0.131217,
 
 [node name="Coin10" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0.131217, -37.4576, -100.476 )
-
-[node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( -0.513098, 0.644539, -0.566833, -0.276614, 0.500988, 0.820058, 0.812536, 0.577565, -0.0787675, -94.4395, 7.15604, -173.779 )
-shadow_enabled = true
-shadow_bias = 1.0
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 4 )
 
 [node name="Finish" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -46.4529, -119.092 )

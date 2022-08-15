@@ -48,8 +48,31 @@ margin_bottom = 1007.0
 text = "Game by Parrot Studios (C) 2022"
 
 [node name="Parrot" type="Sprite" parent="."]
-position = Vector2( 298, 810 )
-scale = Vector2( 0.471135, 0.471135 )
+position = Vector2( 308, 903 )
+scale = Vector2( 0.204256, 0.188601 )
 texture = ExtResource( 4 )
 
+[node name="NextEnvironmentButton" type="Button" parent="."]
+margin_left = 358.0
+margin_top = 685.0
+margin_right = 432.0
+margin_bottom = 751.0
+text = ">"
+
+[node name="PreviousEnvironmentButton" type="Button" parent="."]
+margin_left = 170.0
+margin_top = 681.0
+margin_right = 246.0
+margin_bottom = 764.0
+text = "<"
+
+[node name="WorldLabel" type="Label" parent="."]
+margin_left = 263.0
+margin_top = 704.0
+margin_right = 346.0
+margin_bottom = 742.0
+text = "World"
+
 [connection signal="item_selected" from="TrackList" to="." method="_on_TrackList_item_selected"]
+[connection signal="button_up" from="NextEnvironmentButton" to="." method="_on_NextEnvironmentButton_button_up"]
+[connection signal="button_up" from="PreviousEnvironmentButton" to="." method="_on_PreviousEnvironmentButton_button_up"]

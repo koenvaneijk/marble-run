@@ -6,6 +6,8 @@ var tracks = [
 	{"name": "Two", "scene": "1.tscn"}
 ]
 
+var current_marble_mesh = load("res://marbles/blue_with_fresnel.tres")
+
 func _ready():
 	GameEvents.connect("coin_collected", self, "_on_coin_collected")
 	

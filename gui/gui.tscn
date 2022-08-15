@@ -14,6 +14,10 @@ theme = ExtResource( 3 )
 [node name="TrackSelectScreen" parent="." instance=ExtResource( 2 )]
 
 [node name="TrackStartScreen" parent="." instance=ExtResource( 5 )]
+anchor_right = 0.79
+anchor_bottom = 0.312
+margin_right = -474.0
+margin_bottom = -319.488
 
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
